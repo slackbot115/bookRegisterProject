@@ -16,6 +16,11 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+  <!-- jQuery minified -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
 	<script>
     document.addEventListener('show', function(event) {
       var page = event.target;
@@ -81,7 +86,7 @@
             <div class="col-xs-12">
               <div class="form-group">
                 <label for="">ISBN:</label>
-                <input type="number" class="form-control" id="isbn">
+                <input type="number" class="form-control" id="isbn" min="9999999999999" max="9999999999999">
               </div>
             </div>
           </div>
@@ -100,7 +105,11 @@
 
 	<ons-template id="tab2.html">
 		<ons-page id="second-page">
-
+      <table>
+        <tr>
+          <img src='https://barcode.tec-it.com/barcode.ashx?data=9787270245256&code=ISBN13&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=96&imagetype=Png&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0' alt='Barcode Generator TEC-IT'/>
+        </tr>
+      </table>
 		</ons-page>
 	</ons-template>
 </body>
