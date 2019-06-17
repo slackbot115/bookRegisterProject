@@ -41,6 +41,19 @@
 </head>
 
 <body>
+  <script>
+    $(function(){
+      $('#cadastro').click(function(){
+          var parametros = {
+            'titulo': $('#titulo').val(),
+            'autor': $('#autor').val(),
+            'ano': $('#ano').val(),
+            'isbm': $('#isbm').val()
+          }
+          ons.notification.alert(parametros)
+      })
+    })
+  </script>
 	<ons-page>
 		<ons-toolbar>
 			<div class="center" id="toolbar-title"></div>
