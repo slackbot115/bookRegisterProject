@@ -48,9 +48,15 @@
             'titulo': $('#titulo').val(),
             'autor': $('#autor').val(),
             'ano': $('#ano').val(),
-            'isbm': $('#isbm').val()
+            'isbm': $('#isbn').val()
           }
-          ons.notification.alert(parametros)
+          $.post({
+            url: 'https://livraria-do-ze-luskas8.c9users.io/cadastrar.php',
+            data: parametros,
+            success: function(mensagem){
+              alert(mensagem)
+            }
+          })
       })
     })
   </script>
@@ -90,7 +96,7 @@
             <div class="col-xs-12">
               <div class="form-group">
                 <label for="">Ano:</label>
-                <input type="number" class="form-control" id="ano">
+                <input type="tel" class="form-control" id="ano">
               </div>
             </div>
           </div>
@@ -98,7 +104,7 @@
             <div class="col-xs-12">
               <div class="form-group">
                 <label for="">ISBN:</label>
-                <input type="number" class="form-control" id="isbn" min="9999999999999" max="9999999999999">
+                <input type="tel" class="form-control" id="isbn" min="9999999999999" max="9999999999999">
               </div>
             </div>
           </div>
@@ -125,7 +131,4 @@
 		</ons-page>
 	</ons-template>
 </body>
-
-<!--Dont remove the code below-->
-  <script src="components/actions.js"></script>
 </html>
