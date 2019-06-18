@@ -58,6 +58,25 @@
             }
           })
       })
+
+      $('.tabbar__button').click(function(){
+        $.get({
+          url: 'https://livraria-do-ze-luskas8.c9users.io/listar.php',
+          dataType: 'json',
+          success: function(data){
+            var item = ""
+            $.each(data.livros, function(i, dados){
+              item += "<div><label>"+dados.codigo+"'</label>"
+                      +"<input type='text' value='"+dados.titulo+"'>"
+                      +"<input type='text' value='"+dados.autor+"'>"
+                      +"<input type='text' value='"+dados.ano+"'>"
+                      +"<input type='text' value='"+dados.isbm+"'>"
+                      +"</div>"
+            })
+            $('#table').html(item)
+          }
+        })
+      })
     })
   </script>
 	<ons-page>
@@ -123,10 +142,10 @@
 
 	<ons-template id="tab2.html">
 		<ons-page id="second-page">
-      <table>
-        <tr>
+      <table id="table">
+        <!--<tr>
           <img src='https://barcode.tec-it.com/barcode.ashx?data=9787270245256&code=ISBN13&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=96&imagetype=Png&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0' alt='Barcode Generator TEC-IT'/>
-        </tr>
+        </tr>-->
       </table>
 		</ons-page>
 	</ons-template>
